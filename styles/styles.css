@@ -116,7 +116,7 @@ body {
 
 
 .prompt-box:focus {
-    border-color: rgba(255, 255, 255, 0.75)
+    border-color: rgba(16, 208, 29, 0.75)
 }
 
 
@@ -124,7 +124,7 @@ body {
     display: flex;
     place-content: center;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
     flex: 0 0 auto;
     flex-flow: row nowrap;
     gap: 12px;
@@ -135,10 +135,15 @@ body {
     width: 100%;
 }
 
+.subp {
+    color: rgba(100, 100, 100, 0.588);
+    text-align: center;
+}
+
 .generate-button {
     place-content: flex-start;
     align-items: flex-start;
-    background-color: #F32E98;
+    background-color: rgba(16, 208, 29, 0.75);
     border-radius: 100px;
     display: flex;
     flex: 0 0 auto;
