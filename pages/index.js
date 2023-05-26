@@ -1,16 +1,16 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import buildspaceLogo from '../assets/buildspace-logo.png';
+
 import { useEffect, useState } from 'react';
 
 const Home = () => {
 
-  const maxRetries = 20
-  const [input, setInput] = useState('')
-  const [img, setImg] = useState('')
+  const maxRetries = 20 //number of retries before we notify the user to stop
+  const [input, setInput] = useState('') //what the user types as a prompt
+  const [img, setImg] = useState('') //the image to be shown once prompt is processed
   const [retry,setRetry] = useState(0)
-  const [retryCount, setRetryCount] = useState(maxRetries)
-  const [isGenerating, setIsGenerating] = useState(false)
+  const [retryCount, setRetryCount] = useState(maxRetries) //to validate max retires
+  const [isGenerating, setIsGenerating] = useState(false) //for generating state 
 
   const [finalPrompt, setFinalPrompt] = useState('')
 
@@ -101,16 +101,15 @@ const Home = () => {
   return (
     <div className="root">
       <Head>
-        <title>Aryan's avatar generator | buildspace</title>
+        <title>Avatar maker using SD</title>
       </Head>
       <div className="container">
         <div className="header">
           <div className="header-title">
-            <h1>AI Avatar Creator</h1>
+            <h1>Avatar Maker using SD</h1>
           </div>
           <div className="header-subtitle">
-            <h2>Morph me into an AI created avatar. Call me "aryan" in the prompt.</h2>
-            <h3>Try "potrait of aryan as a clown"</h3>
+            <h2>Trained a Stable Diffusion model on my face. Try prompting "potrait of aryan as a clown to see it in action."</h2>
           </div>
           <div>
             
@@ -128,7 +127,6 @@ const Home = () => {
                   {
                     isGenerating? (<span className='loader'></span>) : (<p>Generate</p>)
                   }
-                  
                 </div>
               </a>
             </div>
@@ -147,18 +145,7 @@ const Home = () => {
       </div>
       
       
-      <div className="badge-container grow">
-        <a
-          href="https://buildspace.so/builds/ai-avatar"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <div className="badge">
-            <Image src={buildspaceLogo} alt="buildspace logo" />
-            <p>build with buildspace</p>
-          </div>
-        </a>
-      </div>
+      
     </div>
   );
 };
